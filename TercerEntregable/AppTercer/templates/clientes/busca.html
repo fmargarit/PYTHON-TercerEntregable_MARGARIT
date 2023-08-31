@@ -1,4 +1,3 @@
-
 <!-- IMPORTANTE PARA LINKEAR FORMATO DE CSS-->
 {% load static %}
 <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
@@ -32,25 +31,15 @@
         <header class="masthead">
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
 
-                
+                <form action="{% url 'ClientesBuscaResultURL' %}" method="GET">
+                    <h1 class="mx-auto my-0 text-uppercase">Busca Clientes</h1>
 
+                        <p style="color: white; font-weight: bold;"> DNI      :<input type="number" name="dni"></p>
 
-                <form action="{% url 'ClientesAltaURL' %}" method="POST">{% csrf_token %}
-                    <h1 class="mx-auto my-0 text-uppercase">Alta Clientes</h1>
-
-                    <p style="color: white; font-weight: bold;">Nombre   :<input class="form-control" name="nombre"   type="text"   placeholder="Ingrese Nombre"               data-sb-validations="required,text"   /> </p>
-                    <p style="color: white; font-weight: bold;">Apellido :<input class="form-control" name="apellido" type="text"   placeholder="Ingrese Apellido"             data-sb-validations="required,text"   /> </p>
-                    <p style="color: white; font-weight: bold;">Email    :<input class="form-control" name="email"    type="email"  placeholder="Ingrese direccion de email  (ej. nombre@mail.com)"   data-sb-validations="required,email"  /> </p>
-                    <p style="color: white; font-weight: bold;">DNI      :<input class="form-control" name="dni"      type="number" placeholder="Ingrese numero de DNI"        data-sb-validations="required,number" /> </p>
-                    <p style="color: white; font-weight: bold;">Fecha Nascimiento :<input class="form-control" name="fnasc"    type="date"   placeholder="Ingrese fecha de nascimiento" data-sb-validations="required,date"   /> </p>
-                    
-                    <button class="btn btn-primary" id="submitButton" type="submit"">Enviar</button>            
+                        <button class="btn btn-primary" type="submit" >Buscar</button>          
                 </form>
 
             <div class="d-flex justify-content-center">
-                   
-                      
-              
           
         </header>
 

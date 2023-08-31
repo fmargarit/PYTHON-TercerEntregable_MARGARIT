@@ -103,7 +103,7 @@ def AltaRubroForm(request):
             nuevoRubro = RubroProd(nombre=info['nombre'],
                                    )
             nuevoRubro.save()
-            return render(request, "rubros/inicio.html",{"mensaje": "Nuevo Producto CREADO Exitosamente"})  
+            return render(request, "rubros/inicio.html",{"mensaje": "Nuevo Rubro CREADO Exitosamente"})  
             
         else:
             return render(request, "rubros/inicio.html",{"mensaje": "Formulario Invalido"})  
@@ -140,11 +140,41 @@ def AltaPedidoForm(request):
 
 
 ## -- BUSQUEDAS -- ##
+def BuscaClienteForm(request):
+    return render(request, "clientes/busca.html")
+
+
+def BuscaClienteResultForm(request):
+    if request.GET["dni"]:
+        dni      = request.GET["dni"]  
+        nombre = Cliente.objects.get(dni=dni)
+        if nombre:  
+            return render(request, "clientes/result.html", {"A": nombre})
+        else:
+            return render( "clientes/result.html", {"mensaje": 'No existe ese Cliente'})
+    else:
+        return HttpResponse(f'No existe ese Cliente')
+
+
 
 ## -- LISTADOS -- ##
 
-def lista_clientes(request):
+def ListaClientesForm(request):
     lista = Cliente.objects.all()
-    return render(request, 'l_clientes.html', {'lista_clientes': lista})
+    return render(request, 'clientes/lista.html', {'lista_clientes': lista})
 
+def ListaProveedoresForm(request):
+    lista = Proveedor.objects.all()
+    return render(request, 'proveedores/lista.html', {'lista_proveedores': lista})
 
+def ListaProductosForm(request):
+    lista = Producto.objects.all()
+    return render(request, 'productos/lista.html', {'lista_productos': lista})
+
+def ListaRubrosForm(request):
+    lista = RubroProd.objects.all()
+    return render(request, 'rubros/lista.html', {'lista_rubros': lista})
+
+def ListaPedidosForm(request):
+    lista = OrdenCompra.objects.all()
+    return render(request, 'pedidos/lista.html', {'lista_pedidos': lista})

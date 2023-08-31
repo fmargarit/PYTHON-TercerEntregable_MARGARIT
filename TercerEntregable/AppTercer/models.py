@@ -25,7 +25,7 @@ class Cliente(models.Model):
         verbose_name_plural = 'CLIENTES'
         
 class RubroProd(models.Model):
-    nombre   = models.CharField(max_length=30)
+    nombre   = models.CharField(max_length=30, null=True)
     def __str__(self):
         return f'{self.nombre}'
     class Meta():
@@ -44,7 +44,7 @@ class Producto(models.Model):
         verbose_name_plural = 'PRODUCTOS'
 
 class OrdenCompra(models.Model):
-    comprador = models.ForeignKey(Cliente , on_delete=models.DO_NOTHING, null=True)
+    comprador = models.ForeignKey(Cliente, on_delete=models.DO_NOTHING)
     producto  = models.ManyToManyField(Producto)
     cantidad  = models.DecimalField(decimal_places=2, max_digits=20, default=0.00)
     class Meta():

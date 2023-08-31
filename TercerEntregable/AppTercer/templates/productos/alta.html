@@ -37,13 +37,34 @@
 
                 <form action="{% url 'ProveedorAltaURL' %}" method="POST">{% csrf_token %}
                     <h1 class="mx-auto my-0 text-uppercase">Alta Productos</h1>
+                    
+                    <p>
+                        <label for="lang">Lenguaje</label>
+                                <select name="lenguajes" id="lang">
+                                <option value="javascript">JavaScript</option>
+                                <option value="java">Java</option>
+                                <option value="python">Python</option>
+                                <option value="c#">C#</option>
+                                <option value="C++">C++</option>
+                        </select>
+                    </p>
 
+                    <p>
+                        <label for="lang">Prueba</label>
+                                <select name="test1" id="test">
+                                <option value=Proveedor.object.all()>Proveedor.object.all()</option>
+                                </select>
+                    </p>
+
+
+
+                    
                     <p style="color: white; font-weight: bold;">Nombre   :<input class="form-control" name="nombre"     type="text"   placeholder="Ingrese Detalle Producto"  data-sb-validations="required,text"   /> </p>
-                    <p style="color: white; font-weight: bold;">Provedor :<input class="form-control" name="proveedor"  type="text"   placeholder="Ingrese Nombre Proveedor"  data-sb-validations="required,text"   /> </p>
-                    <p style="color: white; font-weight: bold;">Rubro   :<input class="form-control" name="rubro"      type="text"   placeholder="Ingrese Rubro"             data-sb-validations="required,text"   /> </p>
+                    <p style="color: white; font-weight: bold;">Provedor :<input class="form-control" name="proveedor"  type="text"   placeholder="Ingrese Nombre Proveedor"  data-sb-validations="required,text" />  </p>
+                    <p style="color: white; font-weight: bold;">Rubro    :<input class="form-control" name="rubro"      type="text"   placeholder="Ingrese Rubro"             data-sb-validations="required,text"   />  </p>
                     <p style="color: white; font-weight: bold;">Precio   :<input class="form-control" name="precio"     type="number" placeholder="Ingrese Precio 0.00"       data-sb-validations="required,number" /> </p>
                      
-                    <button class="btn btn-primary disabled" id="submitButton" type="submit"">Enviar</button>            
+                    <button class="btn btn-primary" id="submitButton" type="submit"">Enviar</button>            
                 </form>
 
             <div class="d-flex justify-content-center">

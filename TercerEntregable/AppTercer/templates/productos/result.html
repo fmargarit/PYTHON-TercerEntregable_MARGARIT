@@ -1,4 +1,3 @@
-
 <!-- IMPORTANTE PARA LINKEAR FORMATO DE CSS-->
 {% load static %}
 <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
@@ -29,34 +28,17 @@
             {% include 'productos/barra.html' %}
 
         <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-
-                
-
-
-                <form action="{% url 'ProductoAltaURL' %}" method="POST">{% csrf_token %}
-                    <h1 class="mx-auto my-0 text-uppercase">Alta Productos</h1>
-                    
-                                       
-                    <p style="color: white; font-weight: bold;">Nombre   :<input class="form-control" name="nombre"     type="text"   placeholder="Ingrese Detalle Producto"  data-sb-validations="required,text"   /> </p>
-                    <p style="color: white; font-weight: bold;">Provedor :<input class="form-control" name="proveedor"  type="text"   placeholder="Ingrese Nombre Proveedor"  data-sb-validations="required,text" />  </p>
-                    <p style="color: white; font-weight: bold;">Rubro    :<input class="form-control" name="rubro"      type="text"   placeholder="Ingrese Rubro"             data-sb-validations="required,text"   />  </p>
-                    <p style="color: white; font-weight: bold;">Precio   :<input class="form-control" name="precio"     type="number" placeholder="Ingrese Precio 0.00"       data-sb-validations="required,number" /> </p>
-                     
-                    <button class="btn btn-primary" id="submitButton" type="submit"">Enviar</button>            
-                </form>
-
+        <header class="masthead">    
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">          
+                <h1 class="mx-auto my-0 text-uppercase">Busqueda Productos</h1>
             <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                      
-              
-          
+                
+            <p style="font-size:xx-large; color: white; font-weight: bold;">Producto:  {{A}}  </p> 
+            
+
+            
         </header>
-
-            
-
-            
+           
 
         <!-- Contact -->
              {% comment %} {% include 'contacto.html' %} {% endcomment %}

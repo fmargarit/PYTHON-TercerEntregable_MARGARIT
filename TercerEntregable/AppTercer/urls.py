@@ -13,13 +13,20 @@ urlpatterns = [
     path('clientes/result/', BuscaClienteResultForm, name='ClientesBuscaResultURL'),
     path('clientes/lista/', ListaClientesForm, name='ClientesListaURL'),
     
+    
     path('proveedores/', proveedores, name='ProveedoresURL'),
     path('proveedores/alta/', AltaProveedorForm, name='ProveedorAltaURL'),
+    path('proveedores/busca/', BuscaProveedorForm, name='ProveedoresBuscaURL'),
+    path('proveedores/result/', BuscaProveedorResultForm, name='ProveedoresBuscaResultURL'),
     path('proveedores/lista/', ListaProveedoresForm, name='ProveedoresListaURL'),
+    
     
     path('producto/', productos, name='ProductosURL'),
     path('producto/alta/', AltaProductoForm, name='ProductoAltaURL'),
+    path('producto/busca/', BuscaProductoForm, name='ProductosBuscaURL'),
+    path('producto/result/', BuscaProductoResultForm, name='ProductosBuscaResultURL'),
     path('producto/lista/', ListaProductosForm, name='ProductosListaURL'),
+    
     
     path('rubro/', rubros, name='RubrosURL'),
     path('rubro/alta/', AltaRubroForm, name='RubroAltaURL'),

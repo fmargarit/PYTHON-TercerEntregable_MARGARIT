@@ -154,6 +154,46 @@ def BuscaClienteResultForm(request):
             return render( "clientes/result.html", {"mensaje": 'No existe ese Cliente'})
     else:
         return HttpResponse(f'No existe ese Cliente')
+#------------------------------------------------------------------------------------------------
+def BuscaProveedorForm(request):
+    return render(request, "proveedores/busca.html")
+
+
+def BuscaProveedorResultForm(request):
+    if request.GET["cuit"]:
+        cuit      = request.GET["cuit"]  
+        nombre    = Proveedor.objects.get(cuit=cuit)
+        if nombre:  
+            return render(request, "proveedores/result.html", {"A": nombre})
+        else:
+            return render( "proveedores/result.html", {"mensaje": 'No existe ese Proveedor'})
+    else:
+        return HttpResponse(f'No existe ese Proveedor')
+#------------------------------------------------------------------------------------------------
+def BuscaProductoForm(request):
+    return render(request, "productos/busca.html")
+
+
+def BuscaProductoResultForm(request):
+    if request.GET["nombre"]:
+        nombre      = request.GET["nombre"]  
+        proveedor    = Producto.objects.get(nombre=nombre)
+        if proveedor:  
+            return render(request, "productos/result.html", {"A": proveedor})
+        else:
+            return render( "productos/result.html", {"mensaje": 'No existe ese Producto'})
+    else:
+        return HttpResponse(f'No existe ese Producto')
+
+
+
+
+
+
+
+
+
+
 
 
 
